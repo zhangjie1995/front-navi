@@ -17,7 +17,7 @@ function render(){
         </li>
         `)
         $addItem.before($newItem)
-        $newItem.on('click',(e)=>{
+        $newItem.on('click',()=>{
             window.open(item.itemUrl)
         })
         $newItem.find('.closeIcon').on('click',(e)=>{
@@ -30,7 +30,7 @@ function render(){
 
 }
 function simiplifyUrl(url){
-    return url.replace(/http:\/\//i, '').replace(/https:\/\//i,'').replace(/www./i,'').replace(/\*/,'')
+    return url.replace(/http:\/\//i, '').replace(/https:\/\//i,'').replace(/www./i,'').replace(/\/.*/,'')
 }
 render()
 
